@@ -23,7 +23,7 @@ jobs:
 
     - name: Build e Push no Docker Hub
       run: |
-        cd gRPCAcoes
+        cd ./gRPCAcoes
         docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/${{ secrets.NOME_IMAGEM }}:$GITHUB_RUN_NUMBER
         docker tag ${{ secrets.DOCKER_USERNAME }}/${{ secrets.NOME_IMAGEM }}:$GITHUB_RUN_NUMBER ${{ secrets.DOCKER_USERNAME }}/${{ secrets.NOME_IMAGEM }}:latest
         docker push ${{ secrets.DOCKER_USERNAME }}/${{ secrets.NOME_IMAGEM }}
