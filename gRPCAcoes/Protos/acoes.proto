@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "gRPCAcoes";
+
+package controlador;
+
+service ControladorAcoes {
+  rpc Registrar (AcaoRequest) returns (AcaoReply);
+}
+
+message AcaoRequest {
+  string codigo = 1;
+  double valor = 2;
+}
+
+message AcaoReply {
+  bool sucesso = 1;
+  string descricao = 2;
+}
